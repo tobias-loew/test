@@ -90,16 +90,6 @@ private:
 
 } // namespace ut_detail
 
-// helper templates to prevent ODR violations
-template<class T>
-struct static_constant {
-    static T value;
-};
-
-template<class T>
-T static_constant<T>::value;
-
-//____________________________________________________________________________//
 
 // helper defines for singletons.
 // BOOST_TEST_SINGLETON_CONS should appear in the class body,
@@ -137,8 +127,6 @@ namespace { BOOST_JOIN( inst, _t)& inst = BOOST_JOIN( inst, _t)::instance(); }
 
 } // namespace unit_test
 } // namespace boost
-
-//____________________________________________________________________________//
 
 #include <boost/test/detail/enable_warnings.hpp>
 
