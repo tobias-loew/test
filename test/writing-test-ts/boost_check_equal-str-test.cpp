@@ -46,11 +46,17 @@ BOOST_AUTO_TEST_CASE( check_is_cstring_comparable_concept )
 
 BOOST_AUTO_TEST_CASE( check_string_compare )
 {
+#if defined(BOOST_CLANG) && (BOOST_CLANG == 1)
+#pragma clang optimize off
+#endif
     char const* buf_ptr_cch     = "abc";
     char const  buf_array_cch[] = "abc";
     char        buf_array_ch[]  = "abc";
     char*       buf_ptr_ch      = buf_array_ch;
     std::string buf_str         = "abc";
+#if defined(BOOST_CLANG) && (BOOST_CLANG == 1)
+#pragma clang optimize on
+#endif
 
     BOOST_TEST((void*)buf_ptr_cch != (void*)buf_array_cch);
     BOOST_TEST((void*)buf_ptr_cch != (void*)buf_array_ch);
