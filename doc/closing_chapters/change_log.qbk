@@ -24,6 +24,7 @@
 # [github_issue 150] Some headers fail to compile independently
 # [github_issue 156] `close_at_tolerance` always returns `false` for comparisons of infinity
 # [github_issue 158] Detecting `boost_test_print_type` does not work when testing a type with an explicit conversion to `bool`
+# [github_issue 160] suppress `-Wformat-overflow` when optimization is enabled on GCC 8.2.0
 # [github_issue 163] Significant start slowdown on MSVC x64/Debug after upgrade to `v1.68.0`
 
 # [pull_request 147] Catch block for `boost::exception` appears after `std::exception` in `execution_monitor::execute()`
